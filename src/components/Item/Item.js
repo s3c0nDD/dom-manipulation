@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Item = ({ id, onRemove, onColorChange, hasColorChanged }) => { debugger; return (
+const Item = ({ id, onRemove, onColorChange, hasColorChanged }) => (
     <li
       value={id}
       className="list__item"
@@ -22,7 +22,7 @@ const Item = ({ id, onRemove, onColorChange, hasColorChanged }) => { debugger; r
             Delete me!
         </button>
     </li>
-)};
+);
 
 Item.propTypes = {
     id: PropTypes.number.isRequired,
