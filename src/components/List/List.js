@@ -11,7 +11,7 @@ const List = ({ items, removeItem, changeColor }) => (
               id={item[0]}
               hasColorChanged={item[1]}
               onRemove={removeItem}
-              onColorChange={changeColor}
+              onColorChange={(idx % 3) ? () => {} : changeColor}
             />
         )}
     </ul>
