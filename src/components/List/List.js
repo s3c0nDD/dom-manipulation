@@ -3,21 +3,24 @@ import PropTypes from 'prop-types';
 
 import Item from './../Item';
 
-const List = ({ items, removeItem }) => (
+const List = ({ items, removeItem, changeColor }) => (
     <ul className="list">
         {items.map((item, idx) =>
             <Item
-              id={item}
               key={idx}
+              id={item[0]}
+              hasColorChanged={item[1]}
               onRemove={removeItem}
+              onColorChange={changeColor}
             />
         )}
     </ul>
 );
 
 List.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.number).isRequired,
-    removeItem: PropTypes.func.isRequired
+    items: PropTypes.arrayOf(PropTypes.array).isRequired,
+    removeItem: PropTypes.func.isRequired,
+    changeColor: PropTypes.func.isRequired
 };
 
 export default List;
