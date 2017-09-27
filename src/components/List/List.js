@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Item from './../Item';
 
+const noop = () => {};
+
 const List = ({ items, removeItem, changeColor }) => (
     <ul className="list">
         {items.map((item, idx) =>
@@ -11,7 +13,7 @@ const List = ({ items, removeItem, changeColor }) => (
               id={item[0]}
               hasColorChanged={item[1]}
               onRemove={removeItem}
-              onColorChange={(idx % 3) ? () => {} : changeColor}
+              onColorChange={(idx % 3) ? noop : changeColor}
             />
         )}
     </ul>
