@@ -1,4 +1,4 @@
-#To start app do:
+# To start app do:
 
 `npm install` or `yarn install`
 
